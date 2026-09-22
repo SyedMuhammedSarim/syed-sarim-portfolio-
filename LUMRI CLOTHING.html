@@ -1,0 +1,1262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUMRI CLOTHINGS | Contemporary Fashion</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f6f3ef;
+            color: #191919;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%;
+            background: #111;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.18);
+        }
+
+        .header-inner {
+            max-width: 1450px;
+            margin: auto;
+            padding: 22px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 29px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .logo span {
+            color: #c9a96e;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c9a96e;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 720px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.42),
+                    rgba(0,0,0,0.42)
+                ),
+                url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1900&q=90")
+                center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 78px;
+            letter-spacing: 10px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            font-size: 17px;
+            color: #eee;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 38px;
+            background: #c9a96e;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* GENERAL */
+        .container {
+            max-width: 1450px;
+            margin: auto;
+            padding: 85px 45px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 43px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            max-width: 720px;
+            margin: auto;
+            color: #777;
+        }
+
+        .gold-line {
+            width: 70px;
+            height: 3px;
+            background: #c9a96e;
+            margin: 18px auto;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            font-size: 36px;
+            margin-bottom: 22px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .about-signature {
+            margin-top: 30px;
+            font-size: 20px;
+            letter-spacing: 3px;
+            color: #c09b5a;
+            font-weight: bold;
+        }
+
+        /* COLLECTIONS */
+        .collections {
+            background: #eee9e2;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .collection-card {
+            position: relative;
+            height: 520px;
+            overflow: hidden;
+            background: #ddd;
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .collection-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 35px 25px;
+            color: white;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.85)
+            );
+        }
+
+        .collection-info h3 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .collection-info p {
+            color: #ddd;
+        }
+
+        /* PRODUCTS */
+        .products {
+            background: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: #f8f7f5;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 410px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .product:hover img {
+            transform: scale(1.04);
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #b08a4d;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        /* BANNER */
+        .fashion-banner {
+            height: 470px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.38),
+                    rgba(0,0,0,0.38)
+                ),
+                url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1900&q=90")
+                center/cover no-repeat;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .fashion-banner h2 {
+            font-size: 60px;
+            letter-spacing: 7px;
+        }
+
+        .fashion-banner p {
+            font-size: 19px;
+            margin-top: 10px;
+        }
+
+        /* MEN WOMEN */
+        .category-section {
+            background: #f5f1eb;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .category-card {
+            height: 470px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .category-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 45px;
+            color: white;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.82)
+            );
+        }
+
+        .category-content h3 {
+            font-size: 35px;
+            letter-spacing: 3px;
+        }
+
+        .category-content p {
+            margin-top: 5px;
+            color: #ddd;
+        }
+
+        /* FULL MENU */
+        .catalog {
+            background: white;
+        }
+
+        .catalog-category {
+            margin-bottom: 60px;
+        }
+
+        .catalog-category h3 {
+            font-size: 30px;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .catalog-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .catalog-item {
+            padding: 23px;
+            background: #f7f5f1;
+            border-left: 4px solid #c9a96e;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .catalog-item h4 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .catalog-item p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .catalog-price {
+            color: #ad874c;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* GALLERY */
+        .gallery {
+            background: #111;
+            color: white;
+        }
+
+        .gallery .section-title h2 {
+            color: white;
+        }
+
+        .gallery .section-title p {
+            color: #aaa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            opacity: 0.8;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #eeeae3;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .contact h2 {
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            margin-bottom: 17px;
+            color: #666;
+        }
+
+        .contact strong {
+            color: #222;
+        }
+
+        .store-box {
+            background: #171717;
+            color: white;
+            padding: 35px;
+            border-top: 4px solid #c9a96e;
+        }
+
+        .store-box h3 {
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .store-box p {
+            color: #ccc;
+        }
+
+        .hours {
+            margin-top: 25px;
+        }
+
+        .hours p {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #444;
+            padding: 9px 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #090909;
+            color: #999;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #c9a96e;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1050px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .collection-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 800px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+                letter-spacing: 5px;
+            }
+
+            .about-grid,
+            .category-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-grid,
+            .product-grid,
+            .catalog-list {
+                grid-template-columns: 1fr;
+            }
+
+            .fashion-banner h2 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 60px 20px;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .section-title h2 {
+                font-size: 31px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                padding: 18px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+
+        <div class="logo">
+            LUMRI <span>CLOTHINGS</span>
+        </div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#collections">COLLECTIONS</a>
+            <a href="#shop">SHOP</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>LUMRI</h1>
+
+        <h2>CONTEMPORARY CLOTHING</h2>
+
+        <p>
+            Timeless silhouettes, refined details and modern design.
+            Discover the latest collection from Lumri Clothings.
+        </p>
+
+        <a href="#shop" class="button">
+            EXPLORE COLLECTION
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>THE LUMRI STANDARD</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Clothing designed around confidence, simplicity and
+                contemporary style.
+            </p>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=90"
+                    alt="Lumri fashion collection">
+
+            </div>
+
+            <div class="about-text">
+
+                <h3>Designed For Modern Living</h3>
+
+                <p>
+                    Lumri Clothings is a contemporary fashion label focused
+                    on creating clean, versatile and sophisticated clothing
+                    for everyday life.
+                </p>
+
+                <p>
+                    From carefully selected fabrics to considered silhouettes,
+                    every piece is designed to balance comfort and style.
+                </p>
+
+                <p>
+                    Our collections are created for people who appreciate
+                    understated design, confident details and timeless
+                    wardrobe essentials.
+                </p>
+
+                <div class="about-signature">
+                    LUMRI CLOTHINGS
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COLLECTIONS -->
+<section class="collections" id="collections">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>OUR COLLECTIONS</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Explore our latest clothing categories and seasonal designs.
+            </p>
+
+        </div>
+
+        <div class="collection-grid">
+
+            <div class="collection-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=90"
+                    alt="Women's collection">
+
+                <div class="collection-info">
+                    <h3>WOMEN</h3>
+                    <p>Elegant silhouettes and modern essentials.</p>
+                </div>
+
+            </div>
+
+            <div class="collection-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1000&q=90"
+                    alt="Men's collection">
+
+                <div class="collection-info">
+                    <h3>MEN</h3>
+                    <p>Refined everyday clothing with a modern edge.</p>
+                </div>
+
+            </div>
+
+            <div class="collection-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1000&q=90"
+                    alt="Accessories">
+
+                <div class="collection-info">
+                    <h3>ESSENTIALS</h3>
+                    <p>Finishing pieces for a complete wardrobe.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FASHION BANNER -->
+<section class="fashion-banner">
+
+    <div>
+
+        <h2>WEAR YOUR STANDARD</h2>
+
+        <p>
+            Style that speaks without saying a word.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="products" id="shop">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>FEATURED PIECES</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Selected pieces from the Lumri Clothings collection.
+            </p>
+
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=90"
+                        alt="Luna Tailored Dress">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Luna Tailored Dress</h3>
+
+                    <p>
+                        Structured contemporary dress with refined detailing.
+                    </p>
+
+                    <span class="price">$89.00</span>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=90"
+                        alt="Classic Beige Coat">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Classic Beige Coat</h3>
+
+                    <p>
+                        Clean-cut outerwear designed for everyday elegance.
+                    </p>
+
+                    <span class="price">$129.00</span>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=900&q=90"
+                        alt="Modern Linen Shirt">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Modern Linen Shirt</h3>
+
+                    <p>
+                        Lightweight linen shirt with a relaxed silhouette.
+                    </p>
+
+                    <span class="price">$59.00</span>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=90"
+                        alt="Lumri Leather Jacket">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Lumri Leather Jacket</h3>
+
+                    <p>
+                        Contemporary jacket with a clean premium finish.
+                    </p>
+
+                    <span class="price">$159.00</span>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=90"
+                        alt="Signature Blazer">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Signature Blazer</h3>
+
+                    <p>
+                        Tailored blazer for polished everyday dressing.
+                    </p>
+
+                    <span class="price">$109.00</span>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=900&q=90"
+                        alt="Premium Knitwear">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Premium Knitwear</h3>
+
+                    <p>
+                        Soft textured knit designed for effortless layering.
+                    </p>
+
+                    <span class="price">$69.00</span>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=90"
+                        alt="Lumi Evening Set">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Lumi Evening Set</h3>
+
+                    <p>
+                        Sophisticated two-piece set for evening occasions.
+                    </p>
+
+                    <span class="price">$119.00</span>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90"
+                        alt="Essential Trousers">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Essential Trousers</h3>
+
+                    <p>
+                        Versatile trousers with a modern tailored fit.
+                    </p>
+
+                    <span class="price">$64.00</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MEN / WOMEN -->
+<section class="category-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>SHOP BY STYLE</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="category-grid">
+
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1200&q=90"
+                    alt="Women's fashion">
+
+                <div class="category-content">
+
+                    <h3>WOMEN'S EDIT</h3>
+
+                    <p>
+                        Modern tailoring, dresses and everyday essentials.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1200&q=90"
+                    alt="Men's fashion">
+
+                <div class="category-content">
+
+                    <h3>MEN'S EDIT</h3>
+
+                    <p>
+                        Contemporary shirts, outerwear and tailored pieces.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FULL CATALOG -->
+<section class="catalog">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>FULL COLLECTION</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Browse more of the Lumri Clothings range.
+            </p>
+
+        </div>
+
+        <!-- WOMEN -->
+        <div class="catalog-category">
+
+            <h3>WOMEN'S COLLECTION</h3>
+
+            <div class="catalog-list">
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Silk Evening Blouse</h4>
+                        <p>Elegant blouse with a relaxed premium silhouette.</p>
+                    </div>
+                    <span class="catalog-price">$79</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Classic Midi Dress</h4>
+                        <p>Minimal midi dress for formal and casual styling.</p>
+                    </div>
+                    <span class="catalog-price">$94</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Wide Leg Trousers</h4>
+                        <p>High-quality trousers with a contemporary cut.</p>
+                    </div>
+                    <span class="catalog-price">$68</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Soft Knit Cardigan</h4>
+                        <p>Comfortable knit layer with subtle detailing.</p>
+                    </div>
+                    <span class="catalog-price">$72</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Tailored Vest</h4>
+                        <p>Structured vest for modern layered looks.</p>
+                    </div>
+                    <span class="catalog-price">$61</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Premium Denim</h4>
+                        <p>Contemporary denim with a clean straight fit.</p>
+                    </div>
+                    <span class="catalog-price">$65</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MEN -->
+        <div class="catalog-category">
+
+            <h3>MEN'S COLLECTION</h3>
+
+            <div class="catalog-list">
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Oxford Shirt</h4>
+                        <p>Classic cotton shirt with refined finishing.</p>
+                    </div>
+                    <span class="catalog-price">$55</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Modern Suit Jacket</h4>
+                        <p>Contemporary tailored jacket with a clean silhouette.</p>
+                    </div>
+                    <span class="catalog-price">$139</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Relaxed Chinos</h4>
+                        <p>Comfortable chinos designed for everyday wear.</p>
+                    </div>
+                    <span class="catalog-price">$59</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Premium Polo</h4>
+                        <p>Minimal polo made with soft premium fabric.</p>
+                    </div>
+                    <span class="catalog-price">$49</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Urban Overshirt</h4>
+                        <p>Versatile overshirt for transitional weather.</p>
+                    </div>
+                    <span class="catalog-price">$74</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Classic Wool Coat</h4>
+                        <p>Refined outerwear with a timeless structure.</p>
+                    </div>
+                    <span class="catalog-price">$149</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ACCESSORIES -->
+        <div class="catalog-category">
+
+            <h3>ACCESSORIES</h3>
+
+            <div class="catalog-list">
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Leather Belt</h4>
+                        <p>Minimal leather belt with brushed metal buckle.</p>
+                    </div>
+                    <span class="catalog-price">$35</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Classic Shoulder Bag</h4>
+                        <p>Structured everyday bag with premium finish.</p>
+                    </div>
+                    <span class="catalog-price">$89</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Signature Scarf</h4>
+                        <p>Soft scarf featuring the Lumri signature style.</p>
+                    </div>
+                    <span class="catalog-price">$39</span>
+                </div>
+
+                <div class="catalog-item">
+                    <div>
+                        <h4>Minimal Wallet</h4>
+                        <p>Compact wallet with a clean contemporary design.</p>
+                    </div>
+                    <span class="catalog-price">$45</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>THE LUMRI LOOK</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                A visual selection from our contemporary fashion world.
+            </p>
+
+        </div>
+
+        <div class="gallery
+```

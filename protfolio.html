@@ -1,0 +1,647 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Syed Muhammed Sarim | Web Designer</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(11,11,11,0.95);
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00d9ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00d9ff;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 8% 60px;
+    background:
+        radial-gradient(circle at 80% 30%, #003d4d 0%, transparent 30%),
+        #0b0b0b;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #00d9ff;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 20px;
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background: #00d9ff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+}
+
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #00d9ff;
+}
+
+.section-subtitle {
+    color: #888;
+    margin-bottom: 45px;
+}
+
+/* ABOUT */
+
+.about {
+    background: #101010;
+}
+
+.about-content {
+    max-width: 850px;
+}
+
+.about-content p {
+    color: #bbb;
+    font-size: 18px;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill {
+    padding: 30px;
+    background: #151515;
+    border: 1px solid #252525;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    border-color: #00d9ff;
+    transform: translateY(-5px);
+}
+
+/* PROJECTS */
+
+.projects {
+    background: #101010;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project {
+    background: #151515;
+    border: 1px solid #252525;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+    border-color: #00d9ff;
+}
+
+.project-top {
+    height: 160px;
+    background: linear-gradient(135deg, #002d38, #111);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-top h3 {
+    font-size: 30px;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content p {
+    color: #999;
+    margin: 12px 0 20px;
+}
+
+.project-link {
+    color: #00d9ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SERVICES */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service {
+    background: #151515;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #252525;
+}
+
+.service h3 {
+    margin-bottom: 12px;
+    color: #00d9ff;
+}
+
+.service p {
+    color: #999;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background: #101010;
+}
+
+.contact p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.email {
+    display: inline-block;
+    color: #00d9ff;
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #777;
+    border-top: 1px solid #222;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <div class="logo">
+        Sarim<span>.</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p style="color:#00d9ff; font-weight:bold;">
+            WEB DESIGNER & FRONT-END DEVELOPER
+        </p>
+
+        <h1>
+            I'm <span>Syed Muhammed Sarim</span>
+        </h1>
+
+        <p>
+            I create modern, responsive and visually appealing websites
+            using HTML, CSS and JavaScript.
+        </p>
+
+        <a href="#projects" class="btn">
+            View My Work
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+    <p class="section-subtitle">
+        A passionate web designer building modern websites.
+    </p>
+
+    <div class="about-content">
+
+        <p>
+            My name is Syed Muhammed Sarim. I am a web designer who enjoys
+            creating clean, modern and responsive websites. I work with
+            HTML, CSS and JavaScript to turn ideas into functional websites.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+        My <span>Skills</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Technologies I use to build websites.
+    </p>
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            HTML
+        </div>
+
+        <div class="skill">
+            CSS
+        </div>
+
+        <div class="skill">
+            JavaScript
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+    <h2 class="section-title">
+        My <span>Projects</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Some of the websites I have created.
+    </p>
+
+    <div class="projects-grid">
+
+        <!-- LUMRI -->
+
+        <div class="project">
+
+            <div class="project-top">
+                <h3>LUMRI</h3>
+            </div>
+
+            <div class="project-content">
+
+                <h3>LUMRI Clothing</h3>
+
+                <p>
+                    A modern fashion website featuring collections,
+                    products, gallery and contact sections.
+                </p>
+
+                <a
+                    href="LUMRI CLOTHING.html"
+                    class="project-link"
+                    target="_blank"
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PIZZA CYCLE -->
+
+        <div class="project">
+
+            <div class="project-top">
+                <h3>PIZZA</h3>
+            </div>
+
+            <div class="project-content">
+
+                <h3>Pizza Cycle</h3>
+
+                <p>
+                    An artisan pizza restaurant website with menu,
+                    gallery, features and contact sections.
+                </p>
+
+                <a
+                    href="PIZZA CYCLE.html"
+                    class="project-link"
+                    target="_blank"
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- GOLD DEAR -->
+
+        <div class="project">
+
+            <div class="project-top">
+                <h3>GOLD DEAR</h3>
+            </div>
+
+            <div class="project-content">
+
+                <h3>Gold Dear</h3>
+
+                <p>
+                    An online board game website with games,
+                    categories, featured content and leaderboard.
+                </p>
+
+                <a
+                    href="gold dear .html"
+                    class="project-link"
+                    target="_blank"
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HUGO -->
+
+        <div class="project">
+
+            <div class="project-top">
+                <h3>HUGO</h3>
+            </div>
+
+            <div class="project-content">
+
+                <h3>HUGO Footwear</h3>
+
+                <p>
+                    A clean footwear brand website showcasing products,
+                    brand information and contact details.
+                </p>
+
+                <a
+                    href="foot wear.html"
+                    class="project-link"
+                    target="_blank"
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <h2 class="section-title">
+        What I <span>Do</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Services I can provide through my web design skills.
+    </p>
+
+    <div class="services-grid">
+
+        <div class="service">
+
+            <h3>Website Design</h3>
+
+            <p>
+                Modern and professional websites designed
+                for businesses and personal brands.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <h3>Responsive Design</h3>
+
+            <p>
+                Websites that work properly on desktops,
+                tablets and mobile devices.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <h3>Front-End Development</h3>
+
+            <p>
+                Interactive web pages built using HTML,
+                CSS and JavaScript.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Let's <span>Connect</span>
+    </h2>
+
+    <p>
+        Interested in working together or checking out my projects?
+    </p>
+
+    <a
+        href="mailto:syedsarim12july@gmail.com"
+        class="email"
+    >
+        syedsarim12july@gmail.com
+    </a>
+
+    <br>
+
+    <a
+        href="mailto:syedsarim12july@gmail.com"
+        class="btn"
+    >
+        Send Me an Email
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Syed Muhammed Sarim.
+    All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
